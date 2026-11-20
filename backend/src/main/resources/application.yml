@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: search-platform
+  datasource:
+    url: jdbc:mysql://localhost:3306/search_platform?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456          # TODO: 改成你自己的 MySQL 密码
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  elasticsearch:
+    uris: http://localhost:9200
+    connection-timeout: 5s
+    socket-timeout: 30s
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+app:
+  jwt:
+    # HS256 密钥，至少 32 字符
+    secret: search-platform-demo-secret-key-2026-abcdef
+    expire-days: 7
+  sync:
+    # 全量同步间隔（毫秒）：定时把 MySQL 数据刷进 ES，60 秒一次
+    interval-ms: 60000

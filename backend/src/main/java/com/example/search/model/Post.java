@@ -1,0 +1,29 @@
+package com.example.search.model;
+
+import java.time.LocalDateTime;
+
+public class Post {
+    private Long id;
+    private String title;
+    private String content;
+    /** 逗号分隔的标签，如 "java,后端" */
+    private String tags;
+    private Long userId;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
+    public String getContent() { return content; }
+    public void setContent(String content) { this.content = content; }
+    public String getTags() { return tags; }
+    public void setTags(String tags) { this.tags = tags; }
+    public Long getUserId() { return userId; }
+    public void setUserId(Long userId) { this.userId = userId; }
+    public LocalDateTime getCreateTime() { return createTime; }
+    public void setCreateTime(LocalDateTime createTime) { this.createTime = createTime; }
+    public LocalDateTime getUpdateTime() { return updateTime; }
+    public void setUpdateTime(LocalDateTime updateTime) { this.updateTime = updateTime; }
+}
